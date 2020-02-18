@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#top-container{
+height: 330px;
+background-image: url(imges/backgrund.jpg);
+background-size: 100% 100%;
+
+}
+
+a{
+display: inline;
+}
+
+#top{
+   height: 290px;
+   /* background-image: url(imges/backgrund.jpg); */
+   /* background-size: 100% 100%; */
+   color: white;
+   font-family: cursive;
+   font-size: 20px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+#Revenue-view{
+  background-color: rgb(57, 177, 174);
+  width: 400px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 0 auto;
+  border:  1px solid black;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+#Expenditure-view{
+   margin-top: 10px;
+   background-color: rgb(249, 61, 66); ;
+   width: 400px;
+   height: 50px;
+   border-radius: 10px;
+   margin: 0 auto;
+   font-size: 16px;
+   border: 1px solid black;
+   display: flex;
+   justify-content: space-around;
+}
+
+#income-text , #show-income , #show-expence ,#expence-text , #percentage {
+    margin-top: 9px;
+}
+#income-text ,#expence-text{
+    color: black;
+}
+
+#percentage{
+    background-color: rgb(255, 114, 101);
+    height: 25px;
+    border-radius: 5px;
+}
+
+
+/* middle */
+
+#middle{
+  background-color: rgb(219, 221, 228);
+  /* height: 80px; */
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+
+}
+
+
+#select , #text , #number{
+    height: 30px;
+    border-radius: 5px;
+    outline: none;  
+}
+#select{
+ width: 80px;
+}
+#text{
+    width: 261px; 
+}
+#number{
+    width: 100px;
+}
+
+.fa-check-circle:before {
+    content: "\f058";
+    color: rgb(57, 177, 174);
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    left: 900p;
+    vertical-align: text-top;
+    cursor: pointer;
+   
+}
+
+input[type="text"] , input[type="number"]::placeholder {                 
+  text-align: center;
+  font-family: cursive;
+ 
+} 
+
+/* ****************************************** */
+/* footer */
+/* ****************************************** */
+
+#footer{
+    display: flex;
+    justify-content: space-around;
+    font-family: cursive;
+    margin-top: 20px;
+}
+
+#footerIncome , #footerExpence{
+    width: 40%;
+    text-align: center;
+}
+#footerExpence{color: rgb(249, 61, 66);}
+#footerIncome{color: rgb(57, 177, 174);}
+
+#create-income, #create-expence {
+    height: 250px;
+    background-color: white;
+    margin-top: 8px;
+    overflow: auto;
+    color: black;
+}
+
+.fa-times-circle:before {
+    content: "\f057";
+    cursor: pointer;
+    
+}
+
+
+
+/* ***************creatElemntstyle**************************** */
+.creatElemntIncome{
+        border-bottom: 1px solid black;
+        height: 35px;
+        position: relative;
+        font-family: fantasy;
+        padding-top: 5px;
+        font-size: 20  ;
+}
+
+
+
+.elementDescriptionincome{
+  position: absolute;
+  left: 2%;
+  font-family: Arial;
+}
+
+.elementIconincome{
+  position: absolute;
+  left: 95%;
+  color: rgb(57, 177, 174);
+  opacity: 0; 
+}
+
+.elementAmountincome{
+    position: absolute;
+    left: 85%;
+    color: rgb(57, 177, 174);
+    transition: all .6s;
+}
+
+
+/* ************************************************** */
+
+.elementAmountexpence{
+    position: absolute;
+    left: 75%;
+    color: rgb(249, 61, 66);  
+    transition: all .6s;
+}
+
+.elementIconExpence{
+    position: absolute;
+    left: 95%;
+    color: rgb(249, 61, 66);  
+    opacity: 0;
+ 
+}
+
+.elementDescriptionExpence{
+    position: absolute;
+    left: 2%;
+    font-family: Arial;
+ 
+}
+
+.footerElementPercentage{
+    position: absolute;
+    left: 90%;
+    background-color: rgb(255, 141, 131) ;
+    border-radius: 5px ;
+    transition: all .6s;
+}
+
+#create-expence p:nth-child(even){
+    background-color: #a8a8a8;
+}
+
+
+#create-income p:nth-child(even){
+    background-color: #a8a8a8;
+}
+
+/* *************************************** */
+
+.creatElemntIncome:hover .elementIconincome  {
+    opacity: 1; 
+}
+.creatElemntIncome:hover .elementIconExpence {
+    opacity: 1;
+}
+
+.creatElemntIncome:hover .elementAmountincome {
+    left:75%;
+}
+
+
+.creatElemntIncome:hover .footerElementPercentage {
+    left:80%;
+}
+
+
+.creatElemntIncome:hover .elementAmountexpence {
+    left:60%;
+}
+
+
+
+#message{
+
+    height: 120px;
+    background-color: rgb(249, 61, 66);  
+    color:black;
+    margin: 0 auto;
+    border-style: inset;
+    display: none;
+    font: bold;
+    padding: 16px;
+}
+
+#iconEror{
+  color: black;
+}
+
+
+/* media queries */
+
+@media only screen and (max-width: 593px) {
+    #footer{
+        display: block;
+    }
+    
+#footerIncome{
+  width: 100%;
+  height: auto;
+}
+#footerExpence{
+  width: 100%;
+  height: auto;
+}
+
+#text {
+    width: 190px;
+}
+
+
+}
+/* history */
+
+
+
+#links{
+    text-align: center;
+    font-family: cursive;
+    font-size: 30px;
+  }
+  .pages{
+      font-family: cursive;
+      color: black;
+      border-radius: 5px;
+      height: 30px;
+      width: 100px;
+      background-color: white;
+  }
+  
+  a{
+    text-decoration: none;
+    color: black;
+  }
+/*   
+  .pIncome{
+      background-color: red;
+  } */

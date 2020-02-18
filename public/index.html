@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="balance.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" >
+    <title>Document</title>
+</head>
+
+<body>
+     <div id="top-container">
+            <div id="links">
+                <button class="pages"><a href="history.html">HistoryPage</a></button>
+                <button class="pages" ><a  href="index.html">HomePage</a></button>
+             </div>   
+    <div id="top">     
+        <p id="date"></p>
+        <div id="message">
+            <i id="iconEror" onclick="closeErrorMessage()" class="far fa-times-circle"></i>
+            <br>
+              it looks like something went wrong error code:404 help pls
+        </div>
+        <p id="show-balance">0.00</p>
+        <div id="Revenue-view">
+            <span id="income-text">INCOME</span><span id="show-income">+0.00</span>
+        </div>
+
+        <div id="Expenditure-view">
+            <span id="expence-text">EXPENCE</span> <span id="show-expence">-0.00</span>
+            <span id="percentage">0%</span>
+        </div>
+    </div>
+</div>
+
+    <div id="middle">
+        <div id="middle-buttons" ></div>
+        <select name="select" id="select">
+            <option value="Incomes">income</option>
+            <option value="Expenses">outcome</option>
+        </select>
+        <input id="text" type="text" placeholder="adddescrption">
+        <input id="number" type="number" min="0" placeholder="add-price">
+
+        <i id="icon" onclick="addItem()" class="fas fa-check-circle"></i>
+    </div>
+
+    <div id="footer">
+        <div id="footerIncome">INCOME
+            <p id="create-income"></p>
+        </div>
+
+        <div id="footerExpence">EXPENSES
+            <p id="create-expence"></p>
+        </div>
+    </div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</html>

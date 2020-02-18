@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+</head>
+<style>
+body{
+  background: linear-gradient(0.25turn, rgb(249, 61, 66), #ebf8e1,rgb(57, 177, 174));
+}
+#table{
+  text-align: center;
+  margin: 0 auto;
+  width:100%;
+  table-layout: fixed;
+  padding: 20px;
+}
+h1{
+  text-align: center;
+  font-family: cursive;
+  font-size: 72px;
+ 
+}
+td{
+  border: 1px solid black;
+}
+
+#links{
+  text-align: center;
+  font-family: cursive;
+  font-size: 30px;
+}
+.pages{
+    font-family: cursive;
+    color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    background-color: white;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
+
+</style>
+<body> 
+     <div id="links">
+
+      <button class="pages"><a href="history.html">HistoryPage</a></button>
+    
+        <button class="pages" ><a  href="index.html">HomePage</a></button>
+    </div>   
+      <h1>History Page</h1>
+        <table id="table">
+                <tr>
+                  <th id="operation">operation</th>
+                  <th id="date">date</th>
+                  <th id="type">type</th>
+                  <th id="description">description</th>
+                </tr>
+                 
+              </table>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  function creatTable(element){
+    let tdOperation = document.createElement('td');
+    let tdDate = document.createElement('td');
+    let tdType = document.createElement('td');
+    let tdDescription = document.createElement('td');
+    let tr = document.createElement('tr');
+    tr.append(tdOperation,tdDate,tdType,tdDescription);
+    let table = document.getElementById("table");
+    table.append(tr);
+    
+    tdOperation.innerText = element.operation;
+    tdDate.innerText = element.date;
+    tdType.innerText = element.type;
+    tdDescription.innerText = element.description;
+
+  }
+
+function showAllHistory() {
+
+axios.get("/history")
+    .then(function (response) {
+
+        if (response.status == 200)
+        {
+            response.data.forEach(element => 
+            { 
+               creatTable(element)
+            });
+        };
+
+    })
+
+    .catch(function (error)
+    {
+        console.log(error);
+    })
+};
+showAllHistory()            
+</script>
+
+</body>
+</html>
